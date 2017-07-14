@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>点球小游戏</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- UC默认竖屏 ，UC强制全屏 -->
+    <meta name="full-screen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="landscape">
+    <!-- QQ强制竖屏 QQ强制全屏 -->
+    <meta name="x5-orientation" content="landscape" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="author" content="xiezuobing(948466) | 2017-06-26">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript">
+    function zoom(width) {
+        var c_width = document.documentElement.clientWidth;
+        var radio = c_width / width;
+        document.body.style.cssText = "zoom:" + radio;
+        return radio;
+    };
+    window.alert = function(name) {
+        var iframe = document.createElement("IFRAME");
+        iframe.style.display = "none";
+        iframe.setAttribute("src", 'data:text/plain,');
+        document.documentElement.appendChild(iframe);
+        window.frames[0].window.alert(name);
+        iframe.parentNode.removeChild(iframe);
+    };
+    </script>
+</head>
+
+<body>
+    <div id="orientLayer" class="mod-orient-layer"><div class="mod-orient-layer__content"><i class="icon mod-orient-layer__icon-orient"></i><div class="mod-orient-layer__desc">为了更好的体验，请使用横屏体验</div></div></div>
+    <div class="football-field" id="field">
+        <!--填写用户名-->
+        <div class="login-wrap">
+            <div id="bgball-wrap">
+            </div>
+            <div class="login-username">
+                <input type="text" class="login-username-text">
+            </div>
+            <div class="select-team clearfix">
+                <span class="fl">选择你的队伍</span>
+                <select class="login-team fr">
+                    <option value="red">红队</option>
+                    <option value="blue">蓝队</option>
+                </select>
+            </div>
+            <a class="login-match-btn">进入比赛</a>
+        </div>
+        
+        <!--蓄力-->
+        <div class="power-wrap hide">
+            <!--蓄力值-->
+            <div class="storage-text">点击运动中的足球，提交您的蓄力值为您队伍加油~</div>
+            <p>当前蓄力值 <span id="storage-number">20</span></p>
+            <div class="storage-power">
+                <img src="img/football.jpg" id="powerBall">
+            </div>
+        </div>
+
+        <!--pk主界面-->
+        <div class="match-main">
+            <!-- <span class="msg-pop ani-pop">开始!</span> -->
+            <!--记分牌-->
+            <div class="count-wrap hide">
+                <span  class="fcolorred">红队 0 </span> : <span class="fcolorblue"> 0 蓝队</span>
+            </div>
+            <!--胜利界面-->
+            <div class="winnner-wrap hide">
+                红队 <img src="img/player/player12.png"> 胜利
+            </div>
+             <div class="rate-count-wrap hide">
+                <span class="fcolorred">红队 3 </span class="fcolorblack">:<span></span> <span class="fcolorblue"> 2 蓝队</span>
+            </div>
+            <!--比赛状态-->
+            <div class="match-status">比赛尚未开始</div>
+            <!--pk人员-->
+            <div class="player-wrap hide"><!--pking-->
+                <span>VS</span>
+                <!--比赛用球-->
+                <div class="match-ball hide"></div>
+            	<ul class="player-list left">
+            		<li class="player p1 ">
+            			<img src="img/player/player1.png">
+            		</li>
+            		<li class="player p2">
+            			<img src="img/player/player2.png">
+            		</li>
+            		<li class="player p3 ">
+            			<img src="img/player/player3.png">
+            		</li>
+            		<li class="player p4">
+            			<img src="img/player/player4.png">
+            		</li>
+            		<li class="player p5">
+            			<img src="img/player/player5.png">
+            		</li>
+            	</ul>
+            	<ul class="player-list right">
+            		<li class="player p1">
+            			<img src="img/player/player5.png">
+            		</li>
+            		<li class="player p2">
+            			<img src="img/player/player6.png">
+            		</li>
+            		<li class="player p3">
+            			<img src="img/player/player7.png">
+            		</li>
+            		<li class="player p4">
+            			<img src="img/player/player8.png">
+            		</li>
+            		<li class="player p5">
+            			<img src="img/player/player9.png">
+            		</li>
+            	</ul>
+            </div>
+        </div>
+        <!--直播日志-->
+        <div class="live-process-wrap">
+           <!--  <p>用户<span class="user">[且听风吟]</span><span class="content">进入了游戏</span></p>
+            <p>用户[<span class="user">[且听风吟]</span><span class="content">提交蓄力值30</span></p>
+            <p>用户[<span class="user">[且听风吟]</span><span class="content">离开了游戏</span></p>
+            <p>用户[<span class="user">[且听风吟]</span><span class="content">离开了游戏</span></p> -->
+        </div>
+
+    </div>
+
+	<script type="text/javascript">
+		(function() {
+	    var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+	    function forceLandscape(){
+	    	var width = document.documentElement.clientWidth;
+	        var height = document.documentElement.clientHeight;
+			var cWidth,cHeight;
+	        var field = document.getElementById('field');
+	        if (width > height) {
+                window.landscapeOrPortrait = 0;//横屏
+	        	var radio = zoom(750);
+	        	cWidth = width / radio;
+	        	cHeight = height / radio;
+	            field.style.width = cWidth + 'px';
+	            field.style.height = cHeight + 'px';
+	            field.style.top = 0;
+	            field.style.left = 0;
+	            field.style.transform = 'none';
+	            field.style.transformOrigin = '50% 50%';
+	        } else {
+                window.landscapeOrPortrait = 1;//竖屏
+	        	var radio = zoom(750);
+	        	cWidth = height / radio;
+        		cHeight = width / radio;
+				field.style.width = cWidth + 'px';
+	            field.style.height = cHeight + 'px';
+	            field.style.top = (cWidth - cHeight) / 2  + 'px';
+	            field.style.left = (cHeight - cWidth) / 2 + 'px';
+	            field.style.transform = 'rotate(90deg)';
+	            field.style.transformOrigin = '50% 50%';
+                // if(!window.hadTip) alert("请横屏体验该游戏哦~");
+                window.hadTip = true;
+	        }
+	    }
+	    forceLandscape();
+	    window.addEventListener('resize', forceLandscape, false);
+	}());
+	</script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/animation.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/socket.io-1.2.0.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <!-- <script type="text/javascript" src="js/game.js"></script> -->
+</body>
+
+</html>

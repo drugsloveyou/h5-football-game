@@ -1,0 +1,403 @@
+
+@charset "UTF-8";
+
+/**
+ * 重置与公用样式
+ * @authors xiezuobing
+ * @date    2017-06-28 20:09:27
+ * @version v1.0
+ */
+
+body,
+div,
+span,
+applet,
+object,
+iframe,
+input,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+hr {
+    padding: 0;
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption {
+    text-align: left;
+}
+
+ins {
+    text-decoration: none;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+input,
+select {
+    vertical-align: middle;
+}
+
+input,
+textarea,
+select {
+    font: 12px SimSun;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+address,
+code,
+caption,
+th,
+cite,
+dfn,
+em,
+var {
+    font-style: normal;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+
+q:before,
+q:after {
+    content: "";
+}
+
+legend {
+    display: none;
+}
+
+html {
+    font-size: 6.25%;
+}
+
+body {
+    font: 12px "Microsoft YaHei";
+}
+img {
+    vertical-align: top
+}
+.clearfix:after {
+    content: "";
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.hide {
+    display: none !important;
+}
+
+.opacity {
+    opacity: 0;
+}
+
+/*延迟*/
+
+.ani-delay100 {
+    animation-delay: 100ms;
+}
+
+.ani-delay200 {
+    animation-delay: 200ms
+}
+
+.ani-delay300 {
+    animation-delay: 300ms
+}
+
+.ani-delay400 {
+    animation-delay: 400ms
+}
+
+.ani-delay500 {
+    animation-delay: 500ms;
+}
+
+.ani-delay600 {
+    animation-delay: 600ms
+}
+
+.ani-delay700 {
+    animation-delay: 700ms
+}
+
+.ani-delay800 {
+    animation-delay: 800ms
+}
+
+.ani-delay900 {
+    animation-delay: 900ms
+}
+
+.ani-delay1000 {
+    animation-delay: 1000ms
+}
+
+.ani-delay1500 {
+    animation-delay: 1500ms
+}
+
+.ani-delay2000 {
+    animation-delay: 2000ms
+}
+
+.ani-delay2500 {
+    animation-delay: 2500ms
+}
+
+.ani-delay3000 {
+    animation-delay: 3000ms
+}
+
+/*动画部分*/
+@keyframes slash {
+    from {
+        right: -20px;
+        top: -20px;
+    }
+    to {
+        right: 100%;
+        top: 100%;
+    }
+}
+@keyframes slasha {
+    from {
+        right: -100px;
+        top: -20px;
+    }
+    to {
+        right: 100%;
+        top: 100%;
+    }
+}
+.slash {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 5000ms;
+}
+.ani-slash {
+    animation-name: slash;
+}
+
+.ani-slasha {
+    animation-name: slasha;
+}
+
+
+/*提示样式*/
+@keyframes pop {
+    from {
+        opacity: 1;
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        -webkit-transform: scale(1.5);
+                transform: scale(1.5);
+    }
+}
+.ani-pop {
+    animation-name: pop;
+    animation-duration: 1000ms;
+    animation-timing-function: linear;
+}
+
+/*来回走*/
+@keyframes around {
+    from {
+        -webkit-transform: translateY(0) scale(1);
+                transform: translateY(0) scale(1);
+    }
+
+    25% {
+         -webkit-transform: translateY(-50px) scale(1);
+                transform: translateY(-50px) scale(1);
+    }
+
+    50% {
+         -webkit-transform: translateY(0) scale(1);
+                transform: translateY(0) scale(1);
+    }
+
+    75% {
+         -webkit-transform: translateY(50px) scale(1);
+                transform: translateY(50px) scale(1);
+    }
+
+    to {
+         -webkit-transform: translateY(0) scale(1);
+                transform: translateY(0) scale(1);
+    }
+}
+.ani-around {
+    -webkit-transform: scale(1) !important;
+            transform: scale(1) !important;
+    animation-name: around;
+    animation-iteration-count: infinite;
+    animation-duration: 3000ms;
+    animation-timing-function: linear;
+}
+
+/*踢球*/
+@keyframes play {
+    from {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+        animation-timing-function: linear;
+    }
+    70% {
+        -webkit-transform: translateX(-70px);
+                transform: translateX(-70px);
+        animation-timing-function: ease-in;
+    }
+    to {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+} 
+.ani-play {
+    -webkit-transform: scale(1) !important;
+            transform: scale(1) !important;
+    animation-name: play;
+    animation-duration: 2000ms;
+}
+
+
+/*踢球*/
+@keyframes playr {
+    from {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+        animation-timing-function: linear;
+    }
+    70% {
+        -webkit-transform: translateX(70px);
+                transform: translateX(70px);
+        animation-timing-function: ease-in;
+    }
+    to {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+} 
+
+.ani-play-right {
+    -webkit-transform: scale(1) !important;
+            transform: scale(1) !important;
+    animation-name: playr;
+    animation-duration: 2000ms;
+}
+
+@-webkit-keyframes rotation {
+    10%,100%,90% {
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg)
+    }
+
+    50%,60% {
+        transform: rotate(0);
+        -webkit-transform: rotate(0)
+    }
+}
+
+@keyframes rotation {
+    10%,100%,90% {
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg)
+    }
+
+    50%,60% {
+        transform: rotate(0);
+        -webkit-transform: rotate(0)
+    }
+}

@@ -1,0 +1,735 @@
+.football-field {
+    position: fixed;
+    z-index: 99;
+    background-image: url(../img/field.png);
+    background-size: 100% 100%;
+}
+
+.ballGap,
+.player-list,
+.storage-power,
+.login-wrap {
+    position: absolute;
+}
+
+
+/*登录界面*/
+
+.login-wrap {
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/field.png);
+    background-size: 100% 100%;
+}
+
+.login-wrap .bgBall {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-image: url(../img/football.jpg);
+    background-size: 100% 100%;
+   /* -webkit-transition: all 5s linear;
+            transition: all 5s linear;*/
+}
+
+.login-username {
+	position: relative;
+	z-index: 99;
+    width: 350px;
+    margin: 10% auto 0;
+    height: 50px;
+    line-height: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    color: #6d6f63;
+    font-size: 14px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.login-username:before {
+	content: "请输入用户名";
+	position: absolute;
+}
+.login-username>input {
+	display: block;
+	padding-left: 95px;
+	width: 100%;
+	box-sizing: border-box;
+	height: 50px;
+	font-size: 14px;
+	background: transparent;
+	border: none;
+	outline: none;
+}
+.select-team {
+    /*-webkit-appearance: none;*/
+    position: relative;
+    z-index: 99;
+    display: block;
+    width: 350px;
+    height: 50px;
+    margin: 2% auto 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    border: none;
+    color: #6d6f63;
+    outline: none;
+    padding: 0 10px;
+    box-sizing: border-box;
+    line-height: 50px;
+    font-size: 14px;
+}
+.login-team {
+	background-color: rgba(0,0,0,0);
+    height: 50px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    width: 240px;
+}
+.login-match-btn {
+	position: relative;
+	z-index: 99;
+	display: block;
+	width: 350px;
+	height: 50px;
+	margin: 2% auto 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+	border: none;
+	outline: none;
+    padding: 0 10px;
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 50px;
+	color: white;
+	font-size: 16px;
+}
+/*蓄力*/
+
+.power-wrap {
+    position: fixed;
+    z-index: 100000;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.storage-power>img {
+    top: 0;
+    border-radius: 50%;
+}
+
+.player-list>li>img,
+.player-list>li {
+    width: 100%;
+    -webkit-transition: all .8s ease;
+    transition: all .8s ease;
+}
+
+.player-list>li {
+    position: absolute;
+}
+
+/*还是能力弹窗*/
+.rate-count-wrap {
+    position: absolute;
+    text-align: center;
+    border-radius: 60px;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -140px;
+    background-color: rgba(255,255,255,0.9);
+    width: 300px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 25px;
+    color: #a7111c;
+    font-weight: bold;
+}
+.winnner-wrap {
+	position: absolute;
+	text-align: center;
+	border-radius: 120px;
+	z-index: 999;
+	top: 50%;
+	left: 50%;
+	margin-left: -200px;
+	margin-top: -70px;
+	background-color: rgba(255,255,255,0.9);
+	width: 380px;
+	height: 120px;
+	padding: 10px;
+	line-height: 120px;
+	font-size: 40px;
+	color: #a7111c;
+	font-weight: bold;
+}
+.fcolorblue {
+    color: #1130a7;
+}
+.fcolorred {
+    color: #a7111c;
+}
+.fcolorblack {
+    color: #000;
+}
+.winnner-wrap.blue {
+    color: #1130a7;
+}
+.msg-pop {
+	position: absolute;
+	z-index: 99;
+	top: 50%;
+	left: 50%;
+	margin-top: -35px;
+	margin-left: -165px;
+	/*color: #a7111c;*/
+	color: white;
+	letter-spacing: 2px;
+	line-height: 70px;
+	text-align: center;
+	font-size: 35px;
+	font-weight: bold;
+	width: 330px;
+	height: 70px;
+}
+.winnner-wrap>img {
+	width: 120px;
+	height: 120px;
+}
+/*比赛状态*/
+.match-status {
+	text-align: center;
+	width: 100%;
+	color: red;
+	padding-top: 30px;
+	font-size: 16px;
+}
+/*人员*/
+.player-wrap>span {
+    content: 'VS';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    display: block;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    color: #a7111c;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    opacity: 0;
+}
+.player-wrap.pking>span {
+    opacity: 1;
+}
+
+.player-list[class*=ply]>li {
+    position: absolute;
+    opacity: 0;
+}
+.player-list.ply1>li.p1 {
+    opacity: 1;
+    top: 50% !important;
+    margin-top: -30px;
+    -webkit-transform: scale(1.5) rotate(0deg);
+    transform: scale(1.5) rotate(0deg);
+}
+.player-list.ply2>li.p2 {
+    opacity: 1;
+    top: 50% !important;
+    margin-top: -30px;
+    -webkit-transform: scale(1.5) rotate(0deg);
+    transform: scale(1.5) rotate(0deg);
+}
+.player-list.ply3>li.p3 {
+    opacity: 1;
+    top: 50% !important;
+    margin-top: -30px;
+    -webkit-transform: scale(1.5) rotate(0deg);
+    transform: scale(1.5) rotate(0deg);
+}
+.player-list.ply4>li.p4 {
+    opacity: 1;
+    top: 50% !important;
+    margin-top: -30px;
+    -webkit-transform: scale(1.5) rotate(0deg);
+    transform: scale(1.5) rotate(0deg);
+}
+.player-list.ply5>li.p5 {
+    opacity: 1;
+    top: 50% !important;
+    margin-top: -30px;
+    -webkit-transform: scale(1.5) rotate(0deg);
+    transform: scale(1.5) rotate(0deg);
+}
+.player-list>li {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+.player-list.right>li {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+/*日志进程*/
+.live-process-wrap {
+    position: absolute;
+    z-index: 9999999;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 10px 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.live-process-wrap>p {
+    line-height: 1.5;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #80c080;
+    word-break: break-all;
+}
+.live-process-wrap>p .user {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 2px;
+    color: #d93222;
+}
+
+/*计分版*/
+.count-wrap {
+    width: 100%;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+
+}
+/*横屏显示*/
+@media screen and (orientation: landscape) {
+    .ballGap {
+        top: 50%;
+        margin-top: -71px;
+        height: 142px;
+        width: 42px;
+    }
+    .ballGap.left {
+        left: 30px;
+    }
+    .ballGap.right {
+        right: 30px;
+    }
+    
+    .player-list {
+        width: 60px;
+        height: 300px;
+        top: 50%;
+        margin-top: -150px;
+    }
+    .player-list.left {
+        left: 180px;
+    }
+    .player-list.right {
+        right: 180px;
+    }
+    .player-list>li {
+        /*margin-bottom: 20px;*/
+    }
+    .player-list>li.p1 {
+        top: 0;
+    }
+    .player-list>li.p2 {
+        top: 60px;
+    }
+    .player-list>li.p3 {
+        top: 120px;
+    }
+    .player-list>li.p4 {
+        top: 180px;
+    }
+    .player-list>li.p5 {
+        top: 240px;
+    }
+
+    /*比赛用球*/
+    .match-ball {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 50%;
+        margin-top: -10px;
+        left: 240px;
+        border-radius: 50%;
+        background-image: url(../img/football.jpg);
+        background-size: 100% 100%;
+    }
+    .match-ball.right {
+        right: 240px;
+        left: initial;
+    }
+    .match-ball.ballOut {
+        -webkit-transform: translateX(300px);
+                transform: translateX(300px);
+    }
+    .match-ball.ballIn {
+        -webkit-transform: translateX(450px);
+                transform: translateX(450px);
+    }
+    .match-ball.right.ballOut {
+        -webkit-transform: translateX(-300px);
+                transform: translateX(-300px);
+    }
+    .match-ball.right.ballIn {
+        -webkit-transform: translateX(-450px);
+                transform: translateX(-450px);
+    }
+    /*蓄力部分*/
+    .storage-power {
+        top: 50%;
+        left: 50%;
+        margin-top: -60px;
+        margin-left: -275px;
+        width: 550px;
+        height: 120px;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    .power-wrap>p {
+        text-align: center;
+        color: white;
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    .storage-text {
+        padding-top: 60px;
+        text-align: center;
+        font-size: 16px;
+        color: white;
+    }
+    .storage-power:before {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        display: block;
+        width: 530px;
+        height: 100px;
+        border: 5px solid silver;
+        border-radius: 5px;
+    }
+    .storage-power>img {
+        position: absolute;
+        top: 50%;
+        margin-top: -70px;
+        z-index: 99;
+        width: 140px;
+        height: 140px;
+    }
+    /*玩游戏动画*/
+    /*球的运动轨迹*/
+    @keyframes ballOut {
+        from {
+            -webkit-transform: translateX(0);
+                    transform: translateX(0);
+        }
+        to {
+            -webkit-transform: translateX(300px);
+                    transform: translateX(300px);
+        }
+    }
+    @keyframes ballIn {
+        from {
+            -webkit-transform: translateX(0);
+                    transform: translateX(0);
+        }
+        to {
+            -webkit-transform: translateX(450px);
+                    transform: translateX(450px);
+        }
+    }
+    @keyframes ballOutr {
+        from {
+            -webkit-transform: translateX(0);
+                    transform: translateX(0);
+        }
+        to {
+            -webkit-transform: translateX(-300px);
+                    transform: translateX(-300px);
+        }
+    }
+    @keyframes ballInr {
+        from {
+            -webkit-transform: translateX(0);
+                    transform: translateX(0);
+        }
+        to {
+            -webkit-transform: translateX(-450px);
+                    transform: translateX(-450px);
+        }
+    }
+    /*没进球*/
+    .ani-ballOut {
+        animation-name: ballOut;
+        animation-duration: 1000ms;
+        animation-timing-function: ease-out;
+    }
+
+    /*进球*/
+    .ani-ballIn {
+        animation-name: ballIn;
+        animation-duration: 1000ms;
+        animation-timing-function: ease-out;
+    }
+
+    .match-ball.right.ani-ballIn {
+        animation-name: ballInr;
+    }
+    .match-ball.right.ani-ballOut {
+        animation-name: ballOutr;
+    }
+
+
+    /*直播进程*/
+    .live-process-wrap {
+        width: 180px;
+        max-height: 165px;
+    }
+
+}
+
+
+/*竖屏显示*/
+
+@media screen and (orientation: portrait) {
+    .mod-orient-layer {
+        display: block !important;
+    }
+    /*直播进程*/
+    .live-process-wrap {
+        width: 300px;
+        max-height: 280px;
+    }
+    .ballGap {
+        top: 50%;
+        margin-top: -95px;
+        height: 190px;
+        width: 65px;
+    }
+    .ballGap.left {
+        left: 56px;
+    }
+    .ballGap.right {
+        right: 56px;
+    }
+    /*人员*/
+    .player-list {
+        width: 100px;
+        height: 600px;
+        top: 50%;
+        margin-top: -300px;
+    }
+    .player-list.left {
+        left: 300px
+    }
+    .player-list.right {
+        right: 300px
+    }
+    .player-list>li {
+        margin-bottom: 20px;
+    }
+    .player-list>li.p1 {
+        top: 0;
+    }
+    .player-list>li.p2 {
+        top: 120px;
+    }
+    .player-list>li.p3 {
+        top: 240px;
+    }
+    .player-list>li.p4 {
+        top: 360px;
+    }
+    .player-list>li.p5 {
+        top: 480px;
+    }
+    /*比赛用球*/
+    .match-ball {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 50%;
+        margin-top: -10px;
+        left: 420px;
+        border-radius: 50%;
+        background-image: url(../img/football.jpg);
+        background-size: 100% 100%;
+    }
+    .match-ball.right {
+        right: 420px;
+        left: initial;
+    }
+    .match-ball.ballOut {
+        -webkit-transform: translateX(350px);
+                transform: translateX(350px);
+    }
+    .match-ball.ballIn {
+        -webkit-transform: translateX(680px);
+                transform: translateX(680px);
+    }
+    .match-ball.right.ballOut {
+        -webkit-transform: translateX(-350px);
+                transform: translateX(-350px);
+    }
+    .match-ball.right.ballIn {
+        -webkit-transform: translateX(-680px);
+                transform: translateX(-680px);
+    }
+    /*蓄力部分*/
+    .storage-power {
+        top: 50%;
+        left: 50%;
+        margin-top: -60px;
+        margin-left: -275px;
+        width: 550px;
+        height: 120px;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    .storage-power:before {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        display: block;
+        width: 530px;
+        height: 100px;
+        border: 5px solid silver;
+        border-radius: 5px;
+    }
+    .storage-power>img {
+        position: absolute;
+        top: 50%;
+        margin-top: -70px;
+        z-index: 99;
+        height: 140px;
+    }
+    /*游戏动画*/
+    /*球的运动轨迹*/
+    @keyframes ballOut {
+        from {
+            -webkit-transform: translateX(0);
+                    transform: translateX(0);
+        }
+        to {
+            -webkit-transform: translateX(350px);
+                    transform: translateX(350px);
+        }
+    }
+    @keyframes ballIn {
+        from {
+            -webkit-transform: translateX(0);
+                    transform: translateX(0);
+        }
+        to {
+            -webkit-transform: translateX(680px);
+                    transform: translateX(680px);
+        }
+    }
+    @keyframes ballOutr {
+        from {
+            -webkit-transform: translateX(0);
+                    transform: translateX(0);
+        }
+        to {
+            -webkit-transform: translateX(-350px);
+                    transform: translateX(-350px);
+        }
+    }
+    @keyframes ballInr {
+        from {
+            -webkit-transform: translateX(0);
+                    transform: translateX(0);
+        }
+        to {
+            -webkit-transform: translateX(-680px);
+                    transform: translateX(-680px);
+        }
+    }
+    /*没进球*/
+    .ani-ballOut {
+        animation-name: ballOut;
+        animation-duration: 1000ms;
+        animation-timing-function: ease-out;
+    }
+
+    /*进球*/
+    .ani-ballIn {
+        animation-name: ballIn;
+        animation-duration: 1000ms;
+        animation-timing-function: ease-out;
+    }
+
+    .match-ball.right.ani-ballIn {
+        animation-name: ballInr;
+    }
+    .match-ball.right.ani-ballOut {
+        animation-name: ballOutr;
+    }
+    .login-team {
+        width: 220px;
+    }
+}
+
+/*横屏提示*/
+
+.mod-orient-layer {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    z-index: 99999999
+}
+
+.mod-orient-layer__content {
+    position: absolute;
+    width: 100%;
+    top: 45%;
+    margin-top: -75px;
+    text-align: center
+}
+
+.mod-orient-layer__icon-orient {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAADaCAMAAABU68ovAAAAXVBMVEUAAAD29vb////x8fH////////x8fH5+fn29vby8vL////5+fn39/f6+vr////x8fH////////+/v7////09PT////x8fH39/f////////////////////x8fH///+WLTLGAAAAHXRSTlMAIpML+gb4ZhHWn1c2gvHBvq1uKJcC6k8b187lQ9yhhboAAAQYSURBVHja7d3blpowFIDhTUIAOchZDkre/zE7ycySrbUUpsRN2/1fzO18KzEqxEVgTiZNfgmmtxRc8iaR8HNe8x4BtjQePKayYCIoyBSgvNNE1AkNSHqZyLqk97EgUCCHBzZ5mkg7ScvIJuIyOyXBRFxgpqWZyGsAZLB1KjsJi8nutHU4JCRbFRH8tmirI9k8Jx2sqNs8K/m0LQkrktO2crgcgXGB4AiTEsB0hJfo9MGgX7CGcYiYwQxmMOOvZwRhBG8tCoMXjBDeXvWCEcHbi14wgCBmMIMZzGAGM5jxETNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxY6E2rUQxnH2tz9cirlJFwFBJedaPnUv0M7++egPDE8iAJcIDmxwH5wwv9vUviw2kLbVO3TJU5uul/EyB0FoLp4x60PdGUd3qPurrWyjGGTc05u+1dcgI7/+tCCPARWGhH7o5Y7RCf+bH9ctXLp6v2BVDxfqz0oPXeSVaNtINo/1SXDv4dck8IIkbhtC2ol+iouEonTBCbYvVMnXOjxww6s/RFrBUpXHh/gw1rHj5d/qhYn9Gpk2FWh6xRBRX5Oj3Znh2Sq49/L6+y8pB26q9GbE2dbA2mVbx6I+7MfBglLCttm73ZQi7AD3iL4HqjFYJHSPRppqaUaJ3ATpGa+ckpGak2hRRMyqjGMkvl+xyFeSMwjAqcsZgGDdyhl0oNTnDN4yenJGZFGxNChP5/Y3efh6SM2rDOJMzboYxkDMqwyjIGcIw6F+io2FU1IxIm1JqRmgXSkvNKNCXeTpGrU0JNSO2c6LIGPgCS8AuDHz9ta0SXWDtxoDRH+MqlbC2Dt2G2JFRadtQZt2qq/orGowdGb2euxYiqWEpVWhTBnszoNAPdStuQwxqf0aocdWKW4Z+DfszIh8pxJqbuCE4YAC+4bm0evtipjpgJHeFnyyt1Ku2xa0bhjxr27p75rECNwyI9ZwvXkHq+7aTaMEV44YYy/spfgjgjNHaWW+GeUhGEX7tLlVinIFDDSgnOwhi1V6bU0b6tVS9eAERe863g4dRrtiHdc6o+nn5vtyVVgR79Cqt4uL6gfHPQyGqtP2vf7HADGbcYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JjhtOM+J/AgT008yDMkN/dPP9hzS8zAMQN3OEYeekp5YU7KOKXwVXqiY+QS7smcinGKABWdiBgpPJTSMHJ4KidhhPBUSMLw4CmPhKHgKUXCkHsygum71ftNSgCX6bsl8FQyfbcL5EdYsDk0R3j7aiA5wpt5AjKg/2gLJEBD/0Hf2OOf/vRrj6z/7GtP4B3nMKyjHA12kIPSjnJs3FEO0TvKkYJHOWCR+rjJH0Vn6fI5PjNbAAAAAElFTkSuQmCC);
+    display: inline-block;
+    width: 67px;
+    height: 109px;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -webkit-animation: rotation infinite 1.5s ease-in-out;
+    animation: rotation infinite 1.5s ease-in-out;
+    background-size: 67px
+}
+
+.mod-orient-layer__desc {
+    margin-top: 20px;
+    font-size: 15px;
+    color: #fff
+}
